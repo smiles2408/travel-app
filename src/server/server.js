@@ -19,9 +19,8 @@ app.use(bodyParser.json());
 const cors = require('cors');
 app.use(cors());
 
-// Initialize the main project folder
-app.use(express.static('website'));
-
+// Initialize the main project folder as the dist folder
+app.use(express.static('dist'))
 
 // Setup Server
 const port = 3000;

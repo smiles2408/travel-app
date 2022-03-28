@@ -2,17 +2,42 @@
   "name": "weatherapp",
   "version": "1.0.0",
   "description": "Weather Project",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node src/server/server.js",
+    "build-prod": "webpack --config webpack.prod.js",
+    "build-dev": "webpack-dev-server --config webpack.dev.js --open"
   },
   "author": "orchi",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.2",
-    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "nodemon": "^2.0.15"
+    "git-remote-origin-url": "^4.0.0",
+    "lodash": "^4.17.21",
+    "nodemon": "^2.0.15",
+    "run": "^1.4.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "body-parser": "^1.19.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "cors": "^2.8.5",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^4.5.2",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-fetch": "^3.2.3",
+    "node-sass": "^7.0.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "workbox-webpack-plugin": "^6.5.1"
   }
 }
