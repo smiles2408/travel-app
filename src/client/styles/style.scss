@@ -17,34 +17,6 @@ body{
     font-family: Roboto,arial,sans-serif;
 }
 
-.holder{
-
-}
-
-.entry{
-    background: rgba(59, 74, 107, .4);
-}
-
-#entryHolder{
-
-}
-
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-}
-
-
-.title{
-
-}
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
@@ -56,7 +28,7 @@ label{
 input{
     display:block;
     height: 40px;
-    width: 320px;
+    width: 200px;
     background:rgb(219, 213, 213);
     color: #156bc1;
     font-size: 15px;
@@ -66,9 +38,8 @@ input{
 }
 
 button{
-    width: 200px;
-    height: 60px;
-    background:#156bc1;
+    width: 225px;
+    height: 60px;  
     color: white;
     font-family: Roboto,arial,sans-serif;
     border: none;
@@ -77,11 +48,9 @@ button{
     line-height: 16px;
     font-weight: 700;
     text-align: center;
-    text-transform: uppercase;
-    padding-left: 30px;
+    text-transform: uppercase; 
     border-radius: 50vh;
-    box-sizing: border-box;
-    min-width: 96px;
+    box-sizing: border-box;  
     display: inline-block;
     word-break: break-word;
 }
@@ -92,7 +61,25 @@ textarea{
     font-size: 15px;
     font-family: Roboto,arial,sans-serif;
 }
+#search{
+    padding-left: 30px;
+    margin-left: 50px;
+    min-width: 96px;
+    background:#156bc1;
 
+}
+.print_details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_printnpdf{
+
+    padding: 10px;
+    margin: 20px;
+    min-width: 75px;
+    background:#448cd4;
+} 
 .app_headline{
     font-size: 28px;
     line-height: 32px;
@@ -104,7 +91,10 @@ textarea{
 .travel_city{
     padding-top: 20px;
 }
-
+.travel_date{
+    margin-top: 15px;
+    display: inline-block;  
+}
 .vacation_details{
 
     font-size: 15px;
@@ -123,6 +113,13 @@ textarea{
     background:#f2f2f2;
     color:#70757a;
     text-align: center;
+}
+
+.btn_printnpdf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 /* Reset style for HTML element on active to have no border*/
 input:focus,
