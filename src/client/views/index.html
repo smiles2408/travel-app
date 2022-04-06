@@ -16,8 +16,10 @@
     </header>
         <form id="app">
           <div class ="travel_city">
-            <label for="city">Enter travel destination</label>
-            <input type="text" id="city" placeholder="enter travel destination city here">
+            <label for="cityfrom">FROM City</label>
+            <input type="text" id="cityfrom" placeholder="enter travel departure city here">
+            <label for="cityto">TO city</label>
+            <input type="text" id="cityto" placeholder="enter travel destination city here">
           </div>
           
           <div class ="travel_date">
@@ -34,10 +36,19 @@
           </div>         
           <div>
               <h2> Your Vacation Details are:</h2>
-              <div class="vacation_details" id="location">Location is:</div>
-              <div class="vacation_details" id="weather">Weather is:</div>
-              <div class="vacation_details" id="days"></div>
-              <div class="vacation_details" id="image"></div>
+              <div class="vacation_details" >
+                <div id="destinationcity"></div>
+                <div id="destinationcountry"></div>
+                <div id="countrycode"></div>
+                <div id="population"></div>
+                <div id="latitude"></div>
+                <div id="longitude"></div>
+
+                <div id="weather">Weather is:</div>
+                <div id="days"></div>
+                <div id="image"></div>
+              </div>
+             
           </div>
           <div class="print_details">
             <button class="btn_printnpdf" id="printPage" onclick="window.print()">Print Page</button>
