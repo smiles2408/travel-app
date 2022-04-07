@@ -10,12 +10,24 @@ module.exports = {
     devtool: 'source-map',
     stats: 'verbose',
     devServer: {
-        static: "./dist",
-        hot: true,
+      static: "./dist",
+      compress: true,
+      port: 9000,
+      hot: true,
+      // webpack-dev-server setup
+      host: 'localhost',
+      proxy: {
+          // The frontend code uses the backend to store
+          // data. webpack-dev-server fails at this. Hence
+          // redirecting frontend api requests to a different port.
+          context: () => true,
+          target: 'http://localhost:80',
+          secure: false
+      }
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist/'),
+        path: path.resolve(__dirname, 'dist'),
         clean: true,
       },
     module: {
@@ -28,7 +40,18 @@ module.exports = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-        }       
+        },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name : '[name].[ext]',
+                        }
+                    }
+                ],
+            }       
         ]
     },
     plugins: [

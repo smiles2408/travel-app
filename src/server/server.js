@@ -3,20 +3,13 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-
 const fetchGeonamesApi = require('./geonamesAPI');
 const fetchPixabayApi = require('./pixabayAPI');
 const fetchweatherbitApi = require('./weatherbitAPI');
 const { application } = require('express');
-
 const dotenv = require('dotenv');
 dotenv.config();
 
-
-
-const geoNameAPIKey = "smiles2408";
-const PixabayApiKey = "26534722-a32b755694c511a7d21ce407d";
-const weatherbitApiKey = "bd316045bddf4896902d1c6b37b2e8a9";
 
 const tripData = {
   departure: '',
@@ -28,7 +21,6 @@ const tripData = {
       longitude: '',
       population:''
   },
-  id:'',
   image:'',
   date: '',
   weather: {
@@ -38,8 +30,7 @@ const tripData = {
       sunrise: '',
       sunset: '',
       precip: ''
-  }  ,
-  additionaldata: ''
+  } 
 };
 
 // Start up an instance of app
@@ -57,7 +48,7 @@ app.use(cors());
 const port = 3000;
 const server = app.listen(port, listening);
 function listening(){
-    console.log(`the Travel App is listening on port number ${port}`);
+    console.log(`The Travel App is listening on port number ${port}`);
 }
 
 
@@ -68,10 +59,9 @@ app.get('/all', function (req, res) {
 app.post('/addTrip', async(req, res) => {
   tripData.departure = req.body.departure;
   tripData.date = req.body.traveldate;
-  tripData.additionaldata = req.body.additionaldata;
-// let destinationData = await fetchGeonamesApi(req.body.destination,geoNameAPIKey );
-console.log(process.env.GEONAMES_KEY);
-let destinationData = await fetchGeonamesApi(req.body.destination,geoNameAPIKey);
+ 
+  //Fetching data from the Geoname API
+  let destinationData = await fetchGeonamesApi(req.body.destination,process.env.GEONAMES_KEY);
  
  tripData.destination.city = destinationData.city;
  tripData.destination.country_code = destinationData.country_code;
@@ -79,20 +69,23 @@ let destinationData = await fetchGeonamesApi(req.body.destination,geoNameAPIKey)
  tripData.destination.latitude = destinationData.latitude;
  tripData.destination.longitude = destinationData.longitude;
  tripData.destination.population = destinationData.population;
- tripData.image = await fetchPixabayApi(tripData.destination.city,tripData.destination.country_name, PixabayApiKey);
+
+ //Fetching data from the Pixabay API
+ tripData.image = await fetchPixabayApi(tripData.destination.city,tripData.destination.country_name, process.env.PIXABAY_KEY);
  
  let weatherLatitude = tripData.destination.latitude.slice(0,6);
  let weatherLongitude = tripData.destination.longitude.slice(0,6);
-
- let weatherData = await fetchweatherbitApi(weatherLatitude,weatherLongitude,tripData.date,weatherbitApiKey);
+ 
+//Fetching data from the WeatherBitAPI
+ let weatherData = await fetchweatherbitApi(weatherLatitude,weatherLongitude,tripData.date,process.env.WEATHERBIT_KEY);
  tripData.weather.temperature = weatherData.temperature;
  tripData.weather.icon = weatherData.icon;
  tripData.weather.description = weatherData.description;
  tripData.weather.sunrise = weatherData.sunrise;
  tripData.weather.sunset = weatherData.sunset;
  tripData.weather.precip = weatherData.precip;
-   console.log(tripData);
-  res.send(tripData);
+ console.log(tripData);
+res.send(tripData);
 });
 
 

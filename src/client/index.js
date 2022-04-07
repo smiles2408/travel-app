@@ -1,14 +1,14 @@
 
 import { performAction } from './js/app';
 import { countdownTraveldate } from './js/travelcountdown';
-
 import './styles/style.scss';
+import './media/error.jpeg';
+import './media/weather-error.jpeg';
+
 
 export {
     performAction
 }
-
-
 
 window.addEventListener("DOMContentLoaded", (e) => {
 	// get reference to the form element

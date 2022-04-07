@@ -36,5 +36,5 @@ const fetchGeonamesApi = async (city='', key) => {
 
     };
 };
-//export {fetchGeonamesApi}; 
+
 module.exports = fetchGeonamesApi;

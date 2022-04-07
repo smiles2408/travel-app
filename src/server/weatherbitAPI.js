@@ -9,9 +9,6 @@ const fetchweatherbitApi = async (latitude,longitude,date,apikey) => {
     console.log('Weatherbit API:',response.status,response.statusText,response.ok);
     if(response.ok){
         let data = await response.json();
-        console.log(data.data[0].temp);
-        console.log(data.data[0].weather.description);
-
         return {
             temperature: data.data[0].temp,
             icon: 'https://www.weatherbit.io/static/img/icons/' + data.data[0].weather.icon + '.png',

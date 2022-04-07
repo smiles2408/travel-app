@@ -15,7 +15,7 @@ module.exports = {
   mode: 'production',
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist/'),
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   module: {
@@ -28,9 +28,19 @@ module.exports = {
             {
               test: /\.(sa|sc|c)ss$/,
               use: [MiniCssExtractPlugin.loader,'css-loader','sass-loader']
-            }
-          
-      
+            },
+            {
+              test: /\.(png|svg|jpg|jpeg|gif)$/,
+              use: [
+                  {
+                      loader: 'file-loader',
+                      options: {
+                        name : '[name].[ext]',
+                    }
+                  }
+              ],
+          }    
+              
     ]
   },
     plugins: [
