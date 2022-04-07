@@ -2,17 +2,16 @@ body{
         font-size: 14px;
         font-family: Roboto,arial,sans-serif;
         color: #202124;
+        overflow: auto;
 }
 
 #app{
-    display: grid;
-    grid-auto-rows: minmax(40px, auto);
-    /* grid-template-columns:  */
-    height:70vh;
+    display: flex;
+    flex-direction: column;   
+   justify-content: center;
+   align-items: center;
     background: whitesmoke;
     color: #d32f2f;
-    justify-content: center;
-    grid-gap: 1em;
     font-size: 14px;
     font-family: Roboto,arial,sans-serif;
 }
@@ -62,7 +61,7 @@ button{
     padding-left: 30px;
     margin-left: 50px;
     min-width: 96px;
-    background:#156bc1;
+    background:#367cc2;
 
 }
 .print_details{
@@ -89,8 +88,9 @@ button{
 .travel_city{
     padding-top: 20px;
     display:flex;
-    justify-content: center;
-    align-items: center;
+  //  flex-direction: column;
+   justify-content: center;
+     align-items: center;
 }
 .input_text{
     margin: 10px;
@@ -104,11 +104,13 @@ button{
 .travel_date{
     margin-top: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+ //   align-items: center;
+ // justify-content: center;
+   flex-direction: column;
 }
 #weather-icon{
     display: inline;
+    width:100%;
 }
 
 .vacation_details_hide{
@@ -117,13 +119,15 @@ button{
 .location_image{
     display:flex;
     flex-direction: row;
+    width: 100;
 }
 .vacation_styling{
     text-align: center;
     margin: 10px;
 }
 .footer{
-  
+    
+
     height: auto;
     width: 100vw;
     padding-top: 40px;
