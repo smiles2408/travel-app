@@ -1,29 +1,11 @@
 body{
         font-size: 14px;
         font-family: Roboto,arial,sans-serif;
-        color: #202124;
+        color: #3D82AB;
         overflow: auto;
 }
 
-#app{
-    display: flex;
-    flex-direction: column;   
-   justify-content: center;
-   align-items: center;
-    background: whitesmoke;
-    color: #d32f2f;
-    font-size: 14px;
-    font-family: Roboto,arial,sans-serif;
-}
-#vacationdetails{
-    display: flex;
-    justify-content: center;
-    background-color:whitesmoke;
-    color: #d32f2f;
-    font-size: 14px;
-    font-family: Roboto,arial,sans-serif;
 
-}
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 
@@ -41,7 +23,7 @@ input{
 
 button{
     width: 225px;
-    height: 60px;  
+    height: 50px;  
     color: white;
     font-family: Roboto,arial,sans-serif;
     border: none;
@@ -51,15 +33,46 @@ button{
     font-weight: 700;
     text-align: center;
     text-transform: uppercase; 
-    border-radius: 50vh;
+    border-radius: 30vh;
     box-sizing: border-box;  
     display: inline-block;
     word-break: break-word;
 }
+h2{
+    color:#EE5921;
+}
+footer{
+    
+    margin-top: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color:#70757a;
+    text-align: center;
+}
+
+#app{
+    display: flex;
+    flex-direction: column;   
+   justify-content: center;
+   align-items: center;
+    background: whitesmoke;
+    color: #3D82AB;
+    font-size: 14px;
+    font-family: Roboto,arial,sans-serif;
+}
+#vacationdetails{
+    display: flex;
+    justify-content: center;
+    background-color:whitesmoke;
+    color: #484848;
+    font-size: 14px;
+    font-family: Roboto,arial,sans-serif;
+
+}
 
 #search{
     padding-left: 30px;
-    margin-left: 50px;
+    margin: 40px;
     min-width: 96px;
     background:#367cc2;
 
@@ -74,23 +87,25 @@ button{
     padding: 10px;
     margin: 20px;
     min-width: 75px;
-    background:#448cd4;
+    background:#974c4c;
+    color: white;
 } 
 .app_headline{
     font-size: 28px;
     line-height: 32px;
     font-weight: 700;
-    color: #d32f2f;
+    color: #EE5921;
     margin-bottom: 0;
     padding:10px;
     background-color: whitesmoke;
+    box-shadow: 2px 4px 5px #444;
 }
+
 .travel_city{
     padding-top: 20px;
     display:flex;
-  //  flex-direction: column;
-   justify-content: center;
-     align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 .input_text{
     margin: 10px;
@@ -104,13 +119,12 @@ button{
 .travel_date{
     margin-top: 15px;
     display: flex;
- //   align-items: center;
- // justify-content: center;
-   flex-direction: column;
+    flex-direction: column;
+    text-align: center;
 }
 #weather-icon{
     display: inline;
-    width:100%;
+    width:100;
 }
 
 .vacation_details_hide{
@@ -124,24 +138,16 @@ button{
 .vacation_styling{
     text-align: center;
     margin: 10px;
-}
-.footer{
-    
-
-    height: auto;
-    width: 100vw;
-    padding-top: 40px;
-    background:#f2f2f2;
-    color:#70757a;
-    text-align: center;
+    color: #484848;
 }
 
-.btn_printnpdf{
+.print_details{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
+
+
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
@@ -191,6 +197,10 @@ button:focus {
         width:50vh;
         margin: auto;
     }
+    #weather-icon{
+        width:50vh;
+        margin: auto;
+    }
 }
 /* Small Screens */
 @media (max-width: 600px){
@@ -226,6 +236,10 @@ button:focus {
         font-family: Roboto,arial,sans-serif;
     }
     #location-image{
+        width:50vh;
+        margin: auto;
+    }
+    #weather-icon{
         width:50vh;
         margin: auto;
     }
