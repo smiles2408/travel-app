@@ -1,5 +1,10 @@
 
 
+https://github.com/smiles2408/travel-app/assets/87461037/59b76630-6ed8-47dc-a1c9-311a6025fb4e
+
+
+
+
 The goal of this project is to give you practice with:
 
 - Setting up Webpack
@@ -72,8 +77,14 @@ console.log(`Your API key is ${process.env.API_KEY}`);
 
 #### Step 4: 
 -'npm run build-dev' to build the project in development mode
+
+
 -'npm run build-prod' to build the project in production mode
+
+
 -'npm run start' to start the Server
+
+
 - go to 'http://localhost:3000/' to run the Application
 - The application should run successfully and the results should be displayed in the Results section.
 
